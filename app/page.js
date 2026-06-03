@@ -52,7 +52,7 @@ export default function Portfolio() {
       status: "Available for Freelance & Backend Roles",
       greeting: "Hi, I am ",
       name: "Mohamed",
-      title: "Full-Stack Software Engineer specializing in Django Backend & Next.js Frontend Development.",
+      title: "Full-Stack Software Engineer specializing in Django Backend & Next.js Frontend Development..",
       description: "I build robust, fast, and secure backend systems, integrating IoT hardware and Machine Learning models to deliver cutting-edge web applications.",
       browseBtn: "Browse Code",
       contactBtn: "Get In Touch",
