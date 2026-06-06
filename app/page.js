@@ -42,7 +42,7 @@ export default function Portfolio() {
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("yoosef.dev@example.com"); 
+    navigator.clipboard.writeText("mohamed.yoosef.official@gmail.com"); 
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
