@@ -70,30 +70,27 @@ export default function Portfolio() {
       </nav>
 
       <section id="about" className="pt-32 pb-20 px-6 max-w-4xl mx-auto text-center relative z-10">
-       <motion.div
-  key={index}
-  whileHover={{ y: -6, scale: 1.02 }}
-  transition={{ type: "spring", stiffness: 300 }}
-  className="p-6 rounded-2xl bg-[#03191d]/20 backdrop-blur-md border border-cyan-500/10 hover:border-cyan-400/40 hover:shadow-[0_0_30px_rgba(0,242,254,0.12)] transition-all group cursor-pointer flex flex-col justify-between relative overflow-hidden"
->
-  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-cyan-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-  
-  <div className="relative z-10">
-    <h3 className="text-xl font-bold text-gray-100 group-hover:text-cyan-300 transition-colors flex items-center justify-between">
-      {project.title}
-      <span className="text-cyan-400/0 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300 text-lg">→</span>
-    </h3>
-    <p className="text-gray-400 group-hover:text-gray-300 mt-3 text-sm leading-relaxed transition-colors duration-300">{project.desc}</p>
-  </div>
-  
-  <div className="flex flex-wrap gap-2 mt-6 relative z-10">
-    {project.tech.map((t, i) => (
-      <span key={i} className="text-xs px-2.5 py-1 bg-cyan-950/30 border border-cyan-500/10 rounded-md text-cyan-300/90 group-hover:border-cyan-500/30 transition-colors">
-        {t}
-      </span>
-    ))}
-  </div>
-</motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="px-3 py-1 text-xs font-medium border border-cyan-500/30 rounded-full bg-cyan-500/10 text-cyan-300 shadow-[0_0_15px_rgba(0,242,254,0.1)]">
+            {current.status}
+          </span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mt-6 tracking-tight leading-tight">
+            {current.greeting} 
+            <span className="bg-gradient-to-r from-cyan-400 via-[#00f2fe] to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,242,254,0.3)]">
+              {current.name}
+            </span>
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold mt-4 text-gray-200">
+            {current.title}
+          </h2>
+          <p className="text-lg text-gray-400 mt-6 max-w-2xl mx-auto leading-relaxed">
+            {current.description}
+          </p>
+        </motion.div>
 
         <motion.div 
           initial={{ opacity: 0 }}
