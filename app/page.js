@@ -13,9 +13,7 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ======================================================
-  // ✏️  عدّل بياناتك هنا بسهولة
-  // ======================================================
+  
   const data = {
     name: "Mohamed Yousef",
     firstName: "Mohamed",
@@ -25,38 +23,34 @@ export default function Portfolio() {
       "I build robust, fast, and secure backend systems, integrating IoT hardware and Machine Learning models to deliver cutting-edge web applications.",
     status: "Available for Freelance & Backend Roles",
 
-    // ✏️ غيّر الإيميل هنا بس — مش هيتعرض مباشرة في الصفحة
-    email: "mohamedyousef@gmail.com",
+    email: "mohamed.yoosef.official@gmail.com",
 
-    // ✏️ لينك جيت هب بتاعك
     github: "https://github.com/mohamedyousef-dev",
 
-    // ✏️ المشاريع — أضف github و demo لو عندك
     projects: [
       {
         title: "Smart Gym Management System",
         desc: "An integrated project linking a Django dashboard with IoT hardware (ESP32) for smart attendance tracking via NFC and QR codes.",
         tech: ["Django", "Python", "ESP32", "NFC/RFID", "PostgreSQL"],
-        github: "https://github.com/mohamedyousef-dev/smart-gym", // ✏️ غيّر اللينك
-        demo: "",  // ✏️ حط رابط الـ live demo لو عندك، أو سيبه فاضي
+        github: "https://github.com/mohamedyousef-dev/smart-gym",  
+        demo: "",  
       },
       {
         title: "Facial Expression Recognition AI",
         desc: "A computer vision project deploying machine learning models to classify real-time facial expressions from live camera feeds.",
         tech: ["Python", "Machine Learning", "OpenCV", "GitHub"],
-        github: "https://github.com/mohamedyousef-dev/facial-recognition", // ✏️
+        github: "https://github.com/mohamedyousef-dev/facial-recognition",  
         demo: "",
       },
       {
         title: "Academic Portal & Data Management",
         desc: "A dynamic web platform for managing university courses, schedules, and automated quizzes with a robust API structure.",
         tech: ["Django REST Framework", "React", "Tailwind CSS"],
-        github: "https://github.com/mohamedyousef-dev/academic-portal", // ✏️
+        github: "https://github.com/mohamedyousef-dev/academic-portal", 
         demo: "",
       },
     ],
 
-    // ✏️ Skills — عدّل أو زوّد حسب مهاراتك
     skills: [
       { category: "Backend", items: ["Django", "Django REST Framework", "Python", "PostgreSQL", "Redis"] },
       { category: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
@@ -64,7 +58,6 @@ export default function Portfolio() {
       { category: "DevOps", items: ["Docker", "Git", "Linux", "Nginx"] },
     ],
   };
-  // ======================================================
 
   const copyEmail = () => {
     navigator.clipboard.writeText(data.email);
@@ -84,10 +77,8 @@ export default function Portfolio() {
       dir="ltr"
       className="min-h-screen bg-[#020c0e] text-white font-sans overflow-x-hidden selection:bg-cyan-500/30"
     >
-      {/* Background glow */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-r from-cyan-500/20 to-emerald-500/10 blur-[120px] pointer-events-none z-0" />
 
-      {/* ── Navbar ── */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md border-b ${
           scrolled ? "border-white/10 bg-[#020c0e]/70" : "border-transparent bg-transparent"
@@ -98,7 +89,6 @@ export default function Portfolio() {
             {data.name}
           </span>
 
-          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-6 text-sm text-gray-400">
             {navLinks.map((l) => (
               <a
@@ -111,7 +101,6 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Mobile hamburger */}
           <button
             className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen((v) => !v)}
@@ -123,7 +112,6 @@ export default function Portfolio() {
           </button>
         </div>
 
-        {/* Mobile menu dropdown */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
@@ -147,17 +135,14 @@ export default function Portfolio() {
         </AnimatePresence>
       </nav>
 
-      {/* ── Hero / About ── */}
       <section id="about" className="pt-32 pb-20 px-6 max-w-4xl mx-auto text-center relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <span className="px-3 py-1 text-xs font-medium border border-cyan-500/30 rounded-full bg-cyan-500/10 text-cyan-300 shadow-[0_0_15px_rgba(0,242,254,0.1)]">
             {data.status}
           </span>
 
-          {/* Avatar placeholder — استبدله بـ <img src="/your-photo.jpg" ... /> */}
           <div className="mx-auto mt-8 w-28 h-28 rounded-full border-2 border-cyan-500/40 shadow-[0_0_25px_rgba(0,242,254,0.2)] overflow-hidden bg-gradient-to-br from-cyan-900/60 to-emerald-900/40 flex items-center justify-center">
-            {/* ✏️ استبدل الـ div ده بصورتك: <img src="/photo.jpg" alt="Mohamed" className="w-full h-full object-cover" /> */}
-            <span className="text-4xl select-none">👨‍💻</span>
+            <span className="text-4xl select-none"><img src="/img.jpg" alt="Mohamed" className="w-full h-full object-cover" /></span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold mt-6 tracking-tight leading-tight">
@@ -192,7 +177,6 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* ── Skills ── */}
       <section id="skills" className="py-20 px-6 max-w-5xl mx-auto relative z-10">
         <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
           Skills & Technologies
@@ -220,7 +204,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ── Projects ── */}
       <section id="projects" className="py-20 px-6 max-w-6xl mx-auto relative z-10">
         <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
           Latest Developed Projects
@@ -260,7 +243,6 @@ export default function Portfolio() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-cyan-400 transition-colors border border-white/10 hover:border-cyan-500/40 px-3 py-1.5 rounded-lg"
                     >
-                      {/* GitHub icon */}
                       <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23A11.51 11.51 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.293-1.23 3.293-1.23.647 1.653.242 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.807 5.625-5.48 5.92.43.37.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.697.825.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
                       </svg>
@@ -287,7 +269,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ── Contact ── */}
       <section id="contact" className="py-20 px-6 max-w-3xl mx-auto text-center relative z-10">
         <div className="p-12 rounded-3xl bg-gradient-to-b from-cyan-950/20 to-transparent border border-cyan-500/10 shadow-[0_0_30px_rgba(0,242,254,0.05)]">
           <h2 className="text-3xl font-bold mb-4">Have a project in mind?</h2>
