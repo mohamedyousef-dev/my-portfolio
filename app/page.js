@@ -141,9 +141,9 @@ export default function Portfolio() {
             {data.status}
           </span>
 
-          <div className="mx-auto mt-8 w-28 h-28 rounded-full border-2 border-cyan-500/40 shadow-[0_0_25px_rgba(0,242,254,0.2)] overflow-hidden bg-gradient-to-br from-cyan-900/60 to-emerald-900/40 flex items-center justify-center">
-            <span className="text-4xl select-none"><img src="/img.jpg" alt="Mohamed" className="w-full h-full object-cover" /></span>
-          </div>
+          <div className="mx-auto mt-8 w-28 h-28 rounded-full border-2 border-cyan-500/40 shadow-[0_0_25px_rgba(0,242,254,0.2)] overflow-hidden">
+  <img src="/img.jpg" alt="Mohamed" className="w-full h-full object-cover object-center" />
+</div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold mt-6 tracking-tight leading-tight">
             Hi, I&apos;m{" "}
